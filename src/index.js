@@ -8,6 +8,7 @@ import InputForm from './Components/inputs.js'
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <div className = "resume"></div>
   </React.StrictMode>,
   document.getElementById('root')
 );

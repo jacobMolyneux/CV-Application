@@ -12,7 +12,8 @@ export default class InputForm extends React.Component {
     this.setState({value: event.target.value});
   }
   handleSubmit(event){
-    alert("a name was submitted: " + this.state.value); 
+    const Information = <h1>{this.state.value}</h1>
+     console.log(this.state.value); 
     event.preventDefault();
   }
   render(){
