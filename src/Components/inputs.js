@@ -1,32 +1,37 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
-
-export default class InputForm extends React.Component {
+export default class InputSection extends React.Component{
   constructor(props){
-    super(props);
-    this.state = {value: ''};
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    super();
+    this.state ={
+        value: '',
+        resumeArray: [],
+    };
+    this.onBtnClick = this.onBtnClick.bind(this);
+    this.Change = this.Change.bind(this);
   }
-  handleChange(event) {
+  Change(event){
     this.setState({value: event.target.value});
+    event.preventDefault();
   }
-  handleSubmit(event){
-    const Information = <h1>{this.state.value}</h1>
-     console.log(this.state.value); 
+  onBtnClick(event){
+    this.state.resumeArray.push(this.state.value);
+    console.log(this.state.resumeArray);
     event.preventDefault();
   }
   render(){
-    return (<div>
-      <h1>{this.props.title}</h1>
-      <form onSubmit = {this.handleSubmit}>
-      <input type = 'text' value = {this.state.value} onChange={this.handleChange}></input>
-      <button type = 'submit'>Submit</button>
-      </form>
+    return(
+      <div>
+        <form>
+          <h1>{this.props.title}</h1>
+          <input type ="text" value = {this.state.value} onChange = {this.Change} ></input>
+          <button onClick = {this.onBtnClick}>Click Me!</button>
+        </form>
+        <p>{this.state.value}</p>
+      </div>
       
-    </div>
-    );
+    )
   }
-}
 
+}
 
