@@ -22,12 +22,12 @@ export default class InputSection extends React.Component{
   render(){
     return(
       <div>
-        <form>
-          <h1>{this.props.title}</h1>
+        <form class = 'userSubmitionForm'>
+          <h3>{this.props.title}</h3>
           <input type ="text" value = {this.state.value} onChange = {this.Change} ></input>
           <button onClick = {this.onBtnClick}>Click Me!</button>
         </form>
-        <p>{this.state.value}</p>
+        <p id = "userInfo">{this.state.value}</p>
       </div>
       
     )
